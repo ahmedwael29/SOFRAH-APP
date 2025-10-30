@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <!-- Salla Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.salla.network/fonts/sallaicons.css?v=1.1.2"
+    />
+    <!-- Tailwind Browser -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Page Title -->
+    <title>SOFRAH</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div
+        class="topnav center-between py-2 bg-green-dark text-white text-[14px] h-[40px]"
+      >
+        <div
+          class="w-full mx-auto px-4 md:px-[200px] gap-[10px] flex center-between"
+        >
+          <!-- Right Side - Always visible -->
+          <div class="right flex-center gap-[10px]">
+            <a class="flex-center gap-[6px] border-l pl-3"
+              ><i class="sicon-location text-orange-main"></i>السعودية,
+              الرياض</a
+            >
+            <a class="flex-center gap-[6px] direction-ltr border-l pl-3"
+              >info@sofrah.com<i class="sicon-mail text-orange-main"></i
+            ></a>
+            <a class="flex-center gap-[6px]"
+              ><i class="sicon-clock text-orange-main"></i> مفتوح في مواقيت
+              العمل: 9 صباحا الي 10 مساء</a
+            >
+          </div>
+          <!-- Left Side - Hidden on mobile -->
+          <div class="left hidden md:flex items-center gap-[10px]">
+            <a
+              class="flex flex-row-reverse items-center gap-2 direction-ltr border-l pl-3"
+            >
+              <i class="sicon-phone-talking text-orange-main"></i>
+              <span>+922 254 548 524</span>
+            </a>
+            <div class="icons-social flex gap-2">
+              <a class="icon-style"><i class="sicon-snapchat"></i> </a>
+              <a class="icon-style"><i class="sicon-whatsapp"></i></a>
+              <a class="icon-style"><i class="sicon-instagram"></i></a>
+              <a class="icon-style"><i class="sicon-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Nav -->
+      <nav class="h-auto md:h-[100px] p-[12px]">
+        <div class="container-section center-between h-full">
+          <!-- Logo -->
+          <div class="logo">
+            <a><img src="Assets/logo.svg" alt="SOFRAH Logo" /></a>
+          </div>
+          <!-- Menu - Hidden on mobile/tablet -->
+          <ul
+            class="menu hidden lg:flex flex-center gap-8 font-normal text-[16px]"
+          >
+            <li>
+              <a class="flex-center text-green-dark font-bold">
+                الرئيسية<i class="sicon-keyboard_arrow_down"></i
+              ></a>
+            </li>
+            <li><a>الأطباق الرئيسية </a></li>
+            <li><a>قائمة الطعام</a></li>
+            <li><a>العروض والخصومات</a></li>
+            <li><a>المدونة</a></li>
+          </ul>
+          <!-- Actions -->
+          <div class="actions flex-center gap-6">
+            <a><i class="sicon-search text-[20px] action-style"></i></a>
+            <a><i class="sicon-heart text-[20px] action-style"></i></a>
+            <a class="hidden lg:flex"
+              ><i class="sicon-shopping-bag text-[20px] action-style"></i
+            ></a>
+            <a class="flex"
+              ><i class="sicon-user text-[20px] action-style"></i
+            ></a>
+            <!-- Burger menu button for mobile/tablet -->
+            <button class="burger-menu lg:hidden" id="burgerBtn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu dropdown -->
+        <div
+          class="mobile-menu hidden lg:hidden bg-white border-t"
+          id="mobileMenu"
+        >
+          <div class="container-section flex flex-col gap-4 py-4">
+            <a class="text-green-dark font-bold">الرئيسية</a>
+            <a>الأطباق الرئيسية</a>
+            <a>قائمة الطعام</a>
+            <a>العروض والخصومات</a>
+            <a>المدونة</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-[url('../Assets/hero.png')] bg-[#F7F2E2] bg-cover bg-center py-4 md:py-8"
+    >
+      <div
+        class="flex-center flex-col gap-[16px] md:gap-[32px] pt-[20px] md:pt-[40px]"
+      >
+        <h2 class="text-[24px] md:text-[36px] font-[700] text-center px-4">
+          نكهاتنا المميزة توصل لسفرتك بكل حب
+        </h2>
+        <p class="text-[16px] md:text-[20px] text-[#2F2F2F] text-center px-4">
+          استمتع بأشهى الأطباق الطازجة، مُحضّرة بعناية، تجمع بين الوصفات
+          التقليدية والنكهات العصرية
+        </p>
+        <a class="main-btn mb-2 md:mb-4">
+          اطلب الآن
+          <i class="sicon-arrow-up-left arrow-icon"></i>
+        </a>
+      </div>
+      <div class="hero-image mt-3 md:mt-5 mb-4 md:mb-7 flex-center">
+        <img
+          id="hero-img"
+          src="Assets/carousel1.png"
+          alt="Hero Food Image"
+          class="w-[200px] md:w-auto"
+        />
+      </div>
+    </section>
+
+    <!-- Discover Menu Section -->
+    <section class="my-8 md:my-16 pt-5 md:pt-10 pb-8 md:pb-16">
+      <div class="container-section flex flex-col">
+        <!-- Reusable Section Header -->
+        <div class="flex-center flex-col mb-8">
+          <h2 class="text-[24px] md:text-[36px] font-[700] text-center px-4">
+            استكشف أقسام <span class="text-[#EB1400]">قائمتنا</span>
+          </h2>
+          <p
+            class="text-[#2C2C2C] mt-3 md:mt-5 text-center px-4 text-[14px] md:text-[16px]"
+          >
+            من المذاق الشرقي الأصيل إلى النكهات العالمية.. في سفرتنا، كل طبق هو
+            حكاية.
+          </p>
+          <div class="mt-4">
+            <img src="Assets/Group.png" alt="divider" loading="lazy" />
+          </div>
+        </div>
+        <!-- End Reusable Section Header -->
+        <div class="max-w-7xl mx-auto relative px-4 md:px-8">
+          <!-- Arrows -->
+          <a
+            id="prev-btn"
+            class="hidden md:flex absolute -left-10 top-1/2 -translate-y-1/2 bg-red-600 rounded-full text-white w-[42px] h-[42px] flex-center text-4xl cursor-pointer hover:text-red-700 transition"
+          >
+            <i class="sicon-keyboard_arrow_left"></i>
+          </a>
+          <a
+            id="next-btn"
+            class="hidden md:flex absolute -right-10 top-1/2 -translate-y-1/2 bg-red-600 rounded-full text-white w-[42px] h-[42px] flex-center text-4xl cursor-pointer hover:text-red-700 transition"
+          >
+            <i class="sicon-keyboard_arrow_right"></i>
+          </a>
+
+          <!-- Grid Container -->
+          <div
+            id="offers-container"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-20 place-items-center overflow-hidden"
+          >
+            <!-- Box 1 -->
+            <div class="flex-center flex-col">
+              <div
+                class="offer-box group py-4 px-10 bg-[#f8f5ee] rounded-t-[100px] rounded-b-lg w-[183px] h-[220px] flex flex-col items-center justify-between shadow-sm transition-all duration-300 hover:bg-[#3F8065] p-3"
+              >
+                <img loading="lazy" src="Assets/meat.png" alt="لحوم" />
+                <div class="flex flex-col items-center w-[90px] h-[52px]">
+                  <h3
+                    class="text-[20px] font-semibold transition-colors duration-300 group-hover:text-white"
+                  >
+                    لحوم
+                  </h3>
+                  <p
+                    class="text-[#636363] text-[16px] transition-colors duration-300 group-hover:text-white/90"
+                  >
+                    23 وجبة متاحة
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="flex-center flex-col">
+              <div
+                class="offer-box group py-4 px-10 bg-[#f8f5ee] rounded-t-[100px] rounded-b-lg w-[183px] h-[220px] flex flex-col items-center justify-between shadow-sm transition-all duration-300 hover:bg-[#3F8065] p-3"
+              >
+                <img loading="lazy" src="Assets/burger.png" alt="برجر" />
+                <div class="flex flex-col items-center w-[90px] h-[52px]">
+                  <h3
+                    class="text-[20px] font-semibold transition-colors duration-300 group-hover:text-white"
+                  >
+                    برجر
+                  </h3>
+                  <p
+                    class="text-[#636363] text-[16px] transition-colors duration-300 group-hover:text-white/90"
+                  >
+                    23 وجبة متاحة
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="flex-center flex-col">
+              <div
+                class="offer-box group py-4 px-10 bg-[#f8f5ee] rounded-t-[100px] rounded-b-lg w-[183px] h-[220px] flex flex-col items-center justify-between shadow-sm transition-all duration-300 hover:bg-[#3F8065] p-3"
+              >
+                <img loading="lazy" src="Assets/pizza.png" alt="بيتزا" />
+                <div class="flex flex-col items-center w-[90px] h-[52px]">
+                  <h3
+                    class="text-[20px] font-semibold transition-colors duration-300 group-hover:text-white"
+                  >
+                    بيتزا
+                  </h3>
+                  <p
+                    class="text-[#636363] text-[16px] transition-colors duration-300 group-hover:text-white/90"
+                  >
+                    23 وجبة متاحة
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Box 4 - Hidden on mobile -->
+            <div class="flex-center flex-col">
+              <div
+                class="offer-box group py-4 px-10 bg-[#f8f5ee] rounded-t-[100px] rounded-b-lg w-[183px] h-[220px] flex flex-col items-center justify-between shadow-sm transition-all duration-300 hover:bg-[#3F8065] p-3"
+              >
+                <img loading="lazy" src="Assets/crispy.png" alt="فراخ كرسبى" />
+                <div class="flex flex-col items-center">
+                  <h3
+                    class="text-[20px] font-semibold transition-colors duration-300 group-hover:text-white"
+                  >
+                    فراخ كرسبى
+                  </h3>
+                  <p
+                    class="text-[#636363] text-[16px] transition-colors duration-300 group-hover:text-white/90"
+                  >
+                    23 وجبة متاحة
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Box 5 - Hidden on mobile -->
+            <div class="hidden md:flex flex-center flex-col">
+              <div
+                class="offer-box group py-4 px-10 bg-[#f8f5ee] rounded-t-[100px] rounded-b-lg w-[183px] h-[220px] flex flex-col items-center justify-between shadow-sm transition-all duration-300 hover:bg-[#3F8065] p-3"
+              >
+                <img loading="lazy" src="Assets/fries.png" alt="المقبلات" />
+                <div class="flex flex-col items-center w-[90px] h-[52px]">
+                  <h3
+                    class="text-[20px] font-semibold transition-colors duration-300 group-hover:text-white"
+                  >
+                    المقبلات
+                  </h3>
+                  <p
+                    class="text-[#636363] text-[16px] transition-colors duration-300 group-hover:text-white/90"
+                  >
+                    23 وجبة متاحة
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Box 6 - Hidden on mobile -->
+            <div class="hidden md:flex flex-center flex-col">
+              <div
+                class="offer-box group py-4 px-10 bg-[#f8f5ee] rounded-t-[100px] rounded-b-lg w-[183px] h-[220px] flex flex-col items-center justify-between shadow-sm transition-all duration-300 hover:bg-[#3F8065] p-3"
+              >
+                <img loading="lazy" src="Assets/crostata.png" alt="فطائر" />
+                <div class="flex flex-col items-center w-[90px] h-[52px]">
+                  <h3
+                    class="text-[20px] font-semibold transition-colors duration-300 group-hover:text-white"
+                  >
+                    فطائر
+                  </h3>
+                  <p
+                    class="text-[#636363] text-[16px] transition-colors duration-300 group-hover:text-white/90"
+                  >
+                    23 وجبة متاحة
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section>
+      <div class="container-section flex flex-col">
+        <!-- Reusable Section Header -->
+        <div class="flex-center flex-col mb-8">
+          <h2 class="text-[24px] md:text-[36px] font-[700] text-center px-4">
+            تجربة فاخرة بسعر أخف
+          </h2>
+          <p
+            class="text-[#2C2C2C] mt-3 md:mt-5 text-center px-4 text-[14px] md:text-[16px]"
+          >
+            دلّل نفسك بأشهى الأطباق المختارة مع خصومات حصرية
+          </p>
+          <div class="mt-4">
+            <img
+              loading="lazy"
+              src="Assets/Group.png"
+              alt="divider"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- End Reusable Section Header -->
+        <!-- GRID SECTION -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 place-items-center my-12"
+        >
+          <!-- CARD -->
+          <div class="card relative w-80 p-3">
+            <div class="relative w-[285px] mx-auto">
+              <div class="rounded-[40px] overflow-hidden bg-[#f8f5ee]">
+                <div
+                  class="clip-shape p-4 flex-center h-[300px] transition-all duration-300 overflow-hidden"
+                  style="clip-path: rect(-5px 300px 300px -50px round 18%)"
+                >
+                  <!-- Icons when hover -->
+                  <div
+                    class="icons flex-col flex gap-3 absolute top-4 -right-96 text-white text-xl transition-all duration-300"
+                  >
+                    <a>
+                      <i
+                        class="sicon-heart rounded-full border-[#C8C8C8] border-[0.86px] p-[5px] w-[36px] h-[36px] flex-center"
+                      ></i>
+                    </a>
+                    <a>
+                      <i
+                        class="sicon-eye rounded-full border-[#C8C8C8] border-[0.86px] p-[5px] w-[36px] h-[36px] flex-center"
+                      ></i>
+                    </a>
+                  </div>
+
+                  <img
+                    src="Assets/kloob.png"
+                    alt="ساندوتش"
+                    class="w-40 h-40 object-contain transition-transform duration-500 hover:scale-105"
+                  />
+
+                  <div
+                    class="discount absolute top-3 -left-2 bg-[#EB1400] text-white text-sm px-[20px] rounded py-1"
+                  >
+                    خصم %20
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="absolute left-1/2 transform -translate-x-1/2 -bottom-[18px] bg-[#FF9924] px-8 py-2 rounded-full flex items-center gap-2 text-sm transition-all duration-300 hover:bg-[#EB1400] hover:text-white"
+              >
+                <i class="sicon-cart-minus"></i>
+                أضف إلى السلة
+              </button>
+            </div>
+
+            <div class="bg-white p-4 pt-8 rounded-b-2xl text-center">
+              <h2 class="font-bold text-lg text-gray-800">كلوب ساندوتش تركي</h2>
+              <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                كلوب ساندوتش كبيرة، طبقات من البيض، التركي، الخضار الطازجة
+                والجبن، بخبز محمص
+              </p>
+              <div class="mt-3 flex justify-center items-baseline gap-2">
+                <span class="text-red-600 font-bold text-xl">16 ر.س</span>
+                <span class="text-gray-400 line-through text-sm">24 ر.س</span>
+              </div>
+            </div>
+          </div>
+          <!-- /CARD -->
+          <!-- CARD -->
+          <div class="card relative w-80 p-3">
+            <div class="relative w-[285px] mx-auto">
+              <div class="rounded-[40px] overflow-hidden bg-[#f8f5ee]">
+                <div
+                  class="clip-shape p-4 flex items-center justify-center relative h-[300px] transition-all duration-300 overflow-hidden"
+                  style="clip-path: rect(-5px 300px 300px -50px round 18%)"
+                >
+                  <div
+                    class="icons flex-col flex gap-3 absolute top-4 -right-96 text-white text-xl transition-all duration-300"
+                  >
+                    <a>
+                      <i
+                        class="sicon-heart rounded-full border-[#C8C8C8] border-[0.86px] p-[5px] w-[36px] h-[36px] flex-center"
+                      ></i>
+                    </a>
+                    <a>
+                      <i
+                        class="sicon-eye rounded-full border-[#C8C8C8] border-[0.86px] p-[5px] w-[36px] h-[36px] flex-center"
+                      ></i>
+                    </a>
+                  </div>
+
+                  <img
+                    src="Assets/burger2.png"
+                    alt="ساندوتش"
+                    class="w-40 h-40 object-contain transition-transform duration-500 hover:scale-105"
+                  />
+
+                  <div
+                    class="discount absolute top-3 -left-2 bg-[#EB1400] text-white text-sm px-[20px] rounded py-1"
+                  >
+                    خصم %20
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="absolute left-1/2 transform -translate-x-1/2 -bottom-[18px] bg-[#FF9924] px-6 py-2 rounded-full flex items-center gap-2 text-sm transition-all duration-300 hover:bg-[#EB1400] hover:text-white"
+              >
+                <i class="sicon-cart-minus"></i>
+                أضف إلى السلة
+              </button>
+            </div>
+
+            <div class="bg-white p-4 pt-8 rounded-b-2xl text-center">
+              <h2 class="font-bold text-lg text-gray-800">
+                ساندويتش ستيك فيليه
+              </h2>
+              <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                ساندوتش فيليه ستيك طري، مشوي بعناية مع خضار طازجة وصوص مميز
+              </p>
+              <div class="mt-3 flex justify-center items-baseline gap-2">
+                <span class="text-red-600 font-bold text-xl">16 ر.س</span>
+                <span class="text-gray-400 line-through text-sm">24 ر.س</span>
+              </div>
+            </div>
+          </div>
+          <!-- /CARD -->
+          <!-- CARD - Hidden on mobile -->
+          <div class="hidden md:block card relative w-80 text-center p-3">
+            <div class="relative w-[285px] mx-auto">
+              <div class="rounded-[40px] overflow-hidden bg-[#f8f5ee]">
+                <div
+                  class="clip-shape p-4 flex items-center justify-center relative h-[300px] transition-all duration-300 overflow-hidden"
+                  style="clip-path: rect(-5px 300px 300px -50px round 18%)"
+                >
+                  <div
+                    class="icons flex-col flex gap-3 absolute top-4 -right-96 text-white text-xl transition-all duration-300"
+                  >
+                    <a>
+                      <i
+                        class="sicon-heart rounded-full border-[#C8C8C8] border-[0.86px] p-[5px] w-[36px] h-[36px] flex-center"
+                      ></i>
+                    </a>
+                    <a>
+                      <i
+                        class="sicon-eye rounded-full border-[#C8C8C8] border-[0.86px] p-[5px] w-[36px] h-[36px] flex-center"
+                      ></i>
+                    </a>
+                  </div>
+
+                  <img
+                    src="Assets/philly.png"
+                    alt="ساندوتش"
+                    class="w-40 h-40 object-contain transition-transform duration-500 hover:scale-105"
+                  />
+
+                  <div
+                    class="discount absolute top-3 -left-2 bg-[#EB1400] text-white text-sm px-[20px] rounded py-1"
+                  >
+                    خصم %20
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="absolute left-1/2 transform -translate-x-1/2 -bottom-[18px] bg-[#FF9924] px-6 py-2 rounded-full flex items-center gap-2 text-sm transition-all duration-300 hover:bg-[#EB1400] hover:text-white"
+              >
+                <i class="sicon-cart-minus"></i>
+                أضف إلى السلة
+              </button>
+            </div>
+
+            <div class="bg-white p-4 pt-8 rounded-b-2xl text-center">
+              <h2 class="font-bold text-lg text-gray-800">ساندوتش فيلي ستيك</h2>
+              <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                ساندوتش فيليه لحم بقري طري مع بصل، فلفل وصوص جبنة لذيذ.
+              </p>
+              <div class="mt-3 flex justify-center items-baseline gap-2">
+                <span class="text-red-600 font-bold text-xl">16 ر.س</span>
+                <span class="text-gray-400 line-through text-sm">24 ر.س</span>
+              </div>
+            </div>
+          </div>
+          <!-- /CARD -->
+          <!-- CARD - Hidden on mobile -->
+          <div class="hidden md:block card relative w-80 text-center p-3">
+            <div class="relative w-[285px] mx-auto">
+              <div class="rounded-[40px] overflow-hidden bg-[#f8f5ee]">
+                <div
+                  class="clip-shape p-4 flex items-center justify-center relative h-[300px] transition-all duration-300 overflow-hidden"
+                  style="clip-path: rect(-5px 300px 300px -50px round 18%)"
+                >
+                  <div
+                    class="icons flex-col flex gap-3 absolute top-4 -right-96 text-white text-xl transition-all duration-300"
+                  >
+                    <a>
+                      <i
+                        class="sicon-heart rounded-full border-[#C8C8C8] border-[0.86px] p-[5px] w-[36px] h-[36px] flex-center"
+                      ></i>
+                    </a>
+                    <a>
+                      <i
+                        class="sicon-eye rounded-full border-[#C8C8C8] border-[0.86px] p-[5px] w-[36px] h-[36px] flex-center"
+                      ></i>
+                    </a>
+                  </div>
+
+                  <img
+                    src="Assets/cubano.png"
+                    alt="ساندوتش"
+                    class="w-40 h-40 object-contain transition-transform duration-500 hover:scale-105"
+                  />
+
+                  <div
+                    class="discount absolute top-3 -left-2 bg-[#EB1400] text-white text-sm px-[20px] rounded py-1"
+                  >
+                    خصم %20
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="absolute left-1/2 transform -translate-x-1/2 -bottom-[18px] bg-[#FF9924] px-6 py-2 rounded-full flex items-center gap-2 text-sm transition-all duration-300 hover:bg-[#EB1400] hover:text-white"
+              >
+                <i class="sicon-cart-minus"></i>
+                أضف إلى السلة
+              </button>
+            </div>
+
+            <div class="bg-white p-4 pt-8 rounded-b-2xl text-center">
+              <h2 class="font-bold text-lg text-gray-800">ساندوتش تركي مدخن</h2>
+              <p class="text-sm text-gray-500 mt-1 leading-relaxed">
+                شرائح تركي مدخن مع مخلل وصوص خاص داخل خبز تست محمص شهي
+              </p>
+              <div class="mt-3 flex justify-center items-baseline gap-2">
+                <span class="text-red-600 font-bold text-xl">16 ر.س</span>
+                <span class="text-gray-400 line-through text-sm">24 ر.س</span>
+              </div>
+            </div>
+          </div>
+          <!-- /CARD -->
+        </div>
+        <!-- /GRID SECTION -->
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="my-8 md:my-16 pt-5 md:pt-10 pb-8 md:pb-16">
+      <div class="container-section flex flex-col">
+        <!-- Reusable Section Header -->
+        <div class="flex-center flex-col mb-8">
+          <h2 class="text-[24px] md:text-[36px] font-[700] text-center px-4">
+            قالوا عن سفرة
+          </h2>
+          <p
+            class="text-[#2C2C2C] mt-3 md:mt-5 text-center px-4 text-[14px] md:text-[16px]"
+          >
+            آراء عملائنا تثبت تميزنا، وكل تجربة معهم تزيدنا فخر
+          </p>
+          <div class="mt-4">
+            <img
+              loading="lazy"
+              src="Assets/Group.png"
+              alt="divider"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <!-- End Reusable Section Header -->
+        <div
+          class="parent bg-orange-main py-10 md:py-10 px-4 md:px-8 rounded-[50px] md:rounded-[150px] flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 relative"
+        >
+          <!-- Right Side (Image) -->
+          <div class="right w-full md:w-1/2 flex-center relative z-10">
+            <!-- Desktop Image -->
+            <img
+              src="Assets/people-des.png"
+              alt="testimonial"
+              class="hidden md:block w-[200px] md:w-auto"
+            />
+            <!-- Mobile Image -->
+            <img
+              src="Assets/people-mb.png"
+              alt="testimonial mobile"
+              class="block md:hidden w-[230px] mx-auto -mb-9 relative z-20"
+            />
+          </div>
+
+          <!-- Left Side (White Box) -->
+          <div class="left w-full md:w-1/2 py-3 relative z-0">
+            <div
+              class="main-one bg-white rounded-[40px] md:rounded-[130px] flex flex-col justify-center items-center px-4 md:px-10 py-5 md:py-8 gap-3 md:gap-6 shadow-lg md:max-w-none mx-auto"
+            >
+              <!-- top -->
+              <div
+                class="top flex justify-between items-center w-full px-3 md:px-10 mb-2 md:mb-5"
+              >
+                <img
+                  src="Assets/stars.png"
+                  alt="stars"
+                  class="w-[70px] md:w-auto"
+                />
+                <img
+                  src="Assets/quote.png"
+                  alt="Quote image"
+                  class="w-[25px] md:w-auto"
+                />
+              </div>
+
+              <!-- middle -->
+              <div class="middle mb-3 md:mb-5">
+                <p
+                  class="text-center text-[#323232] leading-relaxed font-[400] text-[13px] md:text-[16px]"
+                >
+                  طلبت أونلاين من سفرة، وتوقعت يتأخر أو يوصل بارد… بالعكس، وصل
+                  بدري وحار كأني آكل داخل المطعم. البرجر خطير، اللحم عصاري
+                  والجبنة سايحة، والبطاطس مقرمشة مثل ما أحب. من جد يهتمّون بأدق
+                  التفاصيل
+                </p>
+              </div>
+
+              <!-- last -->
+              <div class="last flex justify-between items-center w-full">
+                <div
+                  class="flex justify-start flex-col px-3 md:px-6 py-2 md:py-4"
+                >
+                  <h3
+                    class="font-bold text-[#191919] text-[15px] md:text-[18px]"
+                  >
+                    فهد سالم
+                  </h3>
+                  <p
+                    class="text-[#747474] font-normal text-[13px] md:text-[16px]"
+                  >
+                    مدير فني
+                  </p>
+                </div>
+                <img
+                  src="Assets/fries-packet.png"
+                  alt="Fries Packet"
+                  loading="lazy"
+                  class="w-14 md:w-20"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-dark text-white pb-6 md:pb-10">
+      <div class="flex-center mb-4 md:mb-6">
+        <img
+          src="Assets/pizza-footer.png"
+          alt="pizza"
+          class="w-[100px] md:w-auto"
+        />
+      </div>
+      <div class="container-section flex flex-col">
+        <div class="flex-center mb-4 md:mb-6 logo-wrapper relative">
+          <img
+            src="Assets/logo-footer.png"
+            alt="logo"
+            class="w-[80px] md:w-auto"
+          />
+        </div>
+        <!-- Grid Footer -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 text-center md:text-right pb-6 md:pb-10 border-b border-[#A1A1A1]"
+        >
+          <!-- First Column  -->
+          <div>
+            <h3 class="text-[18px] md:text-[20px] font-semibold mb-3 md:mb-4">
+              حسابي
+            </h3>
+            <ul class="space-y-2 md:space-y-3 text-[14px] md:text-[16px]">
+              <li>
+                <a class="hover:text-orange-main transition">حسابي</a>
+              </li>
+              <li>
+                <a class="hover:text-orange-main transition text-orange-main"
+                  >طلباتي</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-orange-main transition">سلة المشتريات</a>
+              </li>
+              <li>
+                <a class="hover:text-orange-main transition">المفضلة</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Second Column  -->
+          <div>
+            <h3 class="text-[18px] md:text-[20px] font-semibold mb-3 md:mb-4">
+              روابط مهمة
+            </h3>
+            <ul class="space-y-2 md:space-y-3 text-[14px] md:text-[16px]">
+              <li>
+                <a>سياسة الخصوصية</a>
+              </li>
+              <li>
+                <a>الشحن والاسترجاع</a>
+              </li>
+              <li>
+                <a>الشروط والأحكام</a>
+              </li>
+              <li>
+                <a>الدعم الفني</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3rd Column  -->
+          <div class="flex flex-col">
+            <h3 class="text-[18px] md:text-[20px] font-semibold mb-3 md:mb-4">
+              تواصل معنا
+            </h3>
+            <ul
+              class="space-y-2 md:space-y-3 flex items-center md:items-start flex-col text-[14px] md:text-[16px]"
+            >
+              <li class="flex items-center justify-center md:justify-end gap-2">
+                <i class="sicon-phone text-orange-main font-bold text-lg"></i>
+                <span>009612345678932</span>
+              </li>
+              <li class="flex items-center justify-center md:justify-end gap-2">
+                <i class="sicon-phone-rotary text-orange-main"></i>
+                <span>009612345678932</span>
+              </li>
+              <li class="flex items-center justify-center md:justify-end gap-2">
+                <i class="sicon-mail text-orange-main"></i>
+                <span>https://salla.sa</span>
+              </li>
+            </ul>
+          </div>
+
+          <!--4th Column   -->
+          <div class="flex md:items-start flex-col">
+            <h3 class="text-[18px] md:text-[20px] font-semibold mb-3 md:mb-4">
+              تابعنا على
+            </h3>
+            <div class="flex justify-center md:justify-end gap-3 md:gap-4">
+              <a
+                class="border border-[#A1A1A1] p-2 rounded-[8px] w-[36px] h-[36px] flex-center hover:border-orange-main transition"
+              >
+                <i class="sicon-instagram text-lg"></i>
+              </a>
+              <a
+                class="border border-[#A1A1A1] p-2 rounded-[8px] w-[36px] h-[36px] flex-center hover:border-orange-main transition"
+              >
+                <i class="sicon-twitter"></i>
+              </a>
+              <a
+                class="border border-[#A1A1A1] p-2 rounded-[8px] w-[36px] h-[36px] flex-center hover:border-orange-main transition"
+              >
+                <i class="sicon-snapchat"></i>
+              </a>
+              <a
+                class="border border-[#A1A1A1] p-2 rounded-[8px] w-[36px] h-[36px] flex-center hover:border-orange-main transition"
+              >
+                <i class="sicon-facebook"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Footer -->
+        <div
+          class="bottom-footer flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 mt-4 md:mt-6 text-[12px] md:text-[14px]"
+        >
+          <div class="right-footer flex justify-center items-center gap-2">
+            <img
+              loading="lazy"
+              src="Assets/vat.png"
+              alt="VAT"
+              class="w-[30px] md:w-auto"
+            />
+            الرقم الضريبي : 946987552
+          </div>
+          <div class="middle-footer hidden md:block">جميع الحقوق محفوظة</div>
+          <div class="left-footer">
+            <div class="payment-imgs flex justify-center items-center gap-2">
+              <img
+                src="Assets/visa.png"
+                alt="Visa"
+                loading="lazy"
+                class="w-[30px] md:w-auto"
+              />
+              <img
+                src="Assets/master.png"
+                alt="Mastercard"
+                loading="lazy"
+                class="w-[30px] md:w-auto"
+              />
+              <img
+                src="Assets/paypal.png"
+                alt="Paypal"
+                loading="lazy"
+                class="w-[30px] md:w-auto"
+              />
+              <img
+                src="Assets/mada.png"
+                alt="Mada"
+                loading="lazy"
+                class="w-[30px] md:w-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
